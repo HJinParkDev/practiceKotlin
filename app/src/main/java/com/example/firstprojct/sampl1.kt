@@ -5,8 +5,9 @@ fun main(){
 
     println(add(1,2))
 
-
     stringTem("hyungjin")
+
+    checkNum(1)
 }
 
 
@@ -44,7 +45,7 @@ fun stringTem(str : String) {
 }
 
 
-/*cas state*/
+/*case state*/
 fun maxBy(a : Int, b : Int) : Int {
 
     if( a>b ){
@@ -55,3 +56,40 @@ fun maxBy(a : Int, b : Int) : Int {
 }
 
 fun maxBy2(a : Int, b: Int) = if(a>b) a else b
+
+/* when (like switch in java) */
+fun checkNum(score : Int) {
+    when(score) {
+        0-> println("this is 0")
+        1-> println("this is 1")
+        2-> println("this is 2")
+        2,3-> println("this is 2 or 3")
+        else -> println("I don't know")
+
+    }
+
+
+    /* when can use return value*/
+
+    var b : Int = when(score){
+        1->11
+        2->22
+        else -> 33 /* must clarify else state*/
+    }
+
+    println("b:${b}")
+
+    when(score){
+        in 90..100 -> println("god")
+
+        in 10..89 -> println("nice")
+        else -> println("good")
+    }
+}
+
+
+/*Expression vs Statement
+*
+* Expression -> every functions
+* what make return values
+* */
