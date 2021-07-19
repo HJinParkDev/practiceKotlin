@@ -40,9 +40,14 @@ val calculateGrade : (Int) -> String = {
     }
 }
 
+/* Different ways to express lambdas */
+fun invokeLambda(lambda : (Double) -> Boolean) : Boolean{
+    return lambda(5.2343)
+
+}
+
 fun main(){
     println(square(12))
-    println(nameAge("jin",35))
     val a = "jin said"
 
     val b = "mac said"
@@ -51,4 +56,15 @@ fun main(){
     println(extendString("jin", 35))
     println(calculateGrade(40))
     println(calculateGrade(200))
+
+    val lambda = {
+        number : Double -> number == 4.3213
+    }
+    /* it : just one parameter
+    * lambda parameter can be (maybe must be) out of bracket
+    * */
+    println(invokeLambda(lambda))
+    println(invokeLambda ({it > 3.22 }))
+    println(invokeLambda { it > 3.22 })
+
 }
